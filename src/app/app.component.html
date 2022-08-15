@@ -1,3 +1,15 @@
-<h1 class="font-bold mb-2 text-center text-lg">
-  {{ title }}
-</h1>
+<app-global-error></app-global-error>
+
+<div class="max-w-2x2 container mx-auto pt-5">
+
+  <h1 class="font-bold mb-2 text-center text-lg">
+    {{ title }}
+  </h1>
+  
+  <p *ngIf="isLoading" class="text-center text-lg">Loading...</p>
+
+  <app-product 
+    *ngFor="let product of products$ | async" 
+    [product]="product">
+  </app-product>
+</div>
