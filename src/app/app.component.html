@@ -2,14 +2,25 @@
 
 <div class="max-w-2x2 container mx-auto pt-5">
 
+  <input 
+    type="text"
+    class="mb-2 border py-2 px-4 w-full"
+    placeholder="Filter products..."
+    [(ngModel)]="term"
+  >
+
   <h1 class="font-bold mb-2 text-center text-lg">
     {{ title }}
   </h1>
   
   <p *ngIf="isLoading" class="text-center text-lg">Loading...</p>
 
-  <app-product 
-    *ngFor="let product of products$ | async" 
-    [product]="product">
-  </app-product>
+  <div *ngIf="products$ | async as products">
+    <app-product 
+      *ngFor="let product of products | filterProducts: term" 
+      [product]="product">
+    </app-product>
+  </div>
+
+
 </div>

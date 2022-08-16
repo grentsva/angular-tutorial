@@ -9,10 +9,10 @@ import { Observable, tap } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title: string = 'Products'
-  //products: IProduct[] = []
   isLoading: boolean = false
   products$: Observable<IProduct[]>
+  title: string = 'Products'
+  term: string = ''
 
   constructor(private productsService: ProductsService) {   
   }
@@ -22,9 +22,5 @@ export class AppComponent implements OnInit {
     this.products$ = this.productsService.getAll().pipe(
       tap(() => this.isLoading = false)
     )
-    // this.productsService.getAll().subscribe(products => {
-    //   this.products = products
-    //   this.isLoading = false
-    // })
   }
 }
