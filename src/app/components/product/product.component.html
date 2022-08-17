@@ -11,7 +11,7 @@
         }"
         (click)="showDetails = !showDetails"
     >
-        {{ showDetails ? 'Hide' : 'Show' }} details
+        <span>{{ showDetails ? 'Hide' : 'Show' }} details</span>
     </button>
 
     <div *ngIf="showDetails">

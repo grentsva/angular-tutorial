@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { IProduct } from "src/app/models/product";
+import { Component, Input } from '@angular/core';
+import { IProduct } from 'src/app/models/product';
 
 @Component({
     selector: 'app-product',
@@ -9,5 +9,5 @@ import { IProduct } from "src/app/models/product";
 export class ProductComponent {
     @Input() product: IProduct
 
-    showDetails: boolean = false
+    showDetails: boolean = false;
 }

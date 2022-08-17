@@ -1,6 +1,9 @@
 <app-global-error></app-global-error>
 
-<div class="max-w-2x2 container mx-auto pt-5">
+<div class="max-w-2x2 container mx-auto pt-1">
+  <h1 class="font-bold mb-2 text-center text-lg">
+    {{ title }}
+  </h1>
 
   <input 
     type="text"
@@ -8,19 +11,24 @@
     placeholder="Filter products..."
     [(ngModel)]="term"
   >
-
-  <h1 class="font-bold mb-2 text-center text-lg">
-    {{ title }}
-  </h1>
   
-  <p *ngIf="isLoading" class="text-center text-lg">Loading...</p>
+  <p *ngIf="isLoading" class="text-center text-lg text-green">Loading...</p>
 
-  <div *ngIf="products$ | async as products">
+  <div *ngIf="productsService.products">
     <app-product 
-      *ngFor="let product of products | filterProducts: term" 
+      *ngFor="let product of productsService.products | filterProducts: term" 
       [product]="product">
     </app-product>
   </div>
 
+  <app-modal *ngIf="modalService.isVisible$ | async" title="Add product">
+    <app-product-add></app-product-add>
+  </app-modal>
 
+  <button 
+    class="rounded-full bg-green-700 text-white fixed right-5 bottom-5 py-2 px-3"
+    (click)="modalService.open()"
+  >
+    <span>&#10010;</span>
+  </button>
 </div>
