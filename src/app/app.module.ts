@@ -9,7 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { FilterProductsPipe } from './pipes/filter-products.pipe'
 import { ModalComponent } from './components/modal/modal.component'
 import { ProductAddComponent } from './components/product-add/product-add.component'
-import { FocusDirective } from './directives/focus.directive'
+import { FocusDirective } from './directives/focus.directive';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FocusDirective } from './directives/focus.directive'
     FilterProductsPipe,
     ModalComponent,
     ProductAddComponent,
-    FocusDirective
+    FocusDirective,
+    ProductPageComponent,
+    AboutPageComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
