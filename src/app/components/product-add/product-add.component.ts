@@ -18,11 +18,21 @@ export class ProductAddComponent implements OnInit {
     title: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(3)
-    ])
+    ]),
+    price: new FormControl<number>(0, [Validators.required]),
+    description: new FormControl<string>('', [])
   })
 
   get title() {
     return this.form.controls.title as FormControl
+  }
+
+  get price() {
+    return this.form.controls.price as FormControl
+  }
+
+  get description() {
+    return this.form.controls.description as FormControl
   }
 
   ngOnInit(): void {}
@@ -31,8 +41,8 @@ export class ProductAddComponent implements OnInit {
     this.productService
       .create({
         title: this.form.value.title as string,
-        price: 13.5,
-        description: 'lorem ipsum set',
+        price: this.form.value.price as number,
+        description: this.form.value.description as string,
         image: 'https://i.pravatar.cc',
         category: 'electronic',
         rating: {

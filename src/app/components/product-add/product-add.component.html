@@ -4,13 +4,28 @@
         class="border w-full py-2 px-4 mb-2" 
         placeholder="Product name"
         formControlName="title"
-        appFocus>
+        appFocus
+    >
 
     <p *ngIf="title.errors?.minlength && title.touched"
-        class="text-red-600 font-medium mb-2 self-start"
+    class="text-red-600 font-medium mb-2 self-start"
     >
         Please fill title field width min length. Now {{title.value.length}}
     </p>    
+
+    <input  
+        type="text" 
+        class="border w-full py-4 px-4 mb-2" 
+        placeholder="Product description"
+        formControlName="description"
+    >
+
+    <input  
+        type="number"
+        min="0"
+        class="border w-full py-2 px-4 mb-2" 
+        formControlName="price"
+    >
     
     <button 
         type="submit" 
