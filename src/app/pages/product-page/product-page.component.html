@@ -8,9 +8,10 @@
         [(ngModel)]="term"
     >
 
-    <div *ngIf="productsService.products">
+    <div *ngIf="productsService.products" class="flex flex-row flex-wrap">
         <app-product 
             *ngFor="let product of productsService.products | filterProducts: term" 
+            class="flex basis-1/5"
             [product]="product">
         </app-product>
     </div>
