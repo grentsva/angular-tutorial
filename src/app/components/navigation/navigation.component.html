@@ -2,7 +2,19 @@
     <h1 class="font-bold">Angular App</h1>
 
     <span>
-        <a routerLink="/" class="mr-10">Products</a>
-        <a routerLink="/about">About</a>
+        <a 
+            routerLink="/" 
+            routerLinkActive="text-yellow-500"
+            [routerLinkActiveOptions]="{exact:true}"
+            class="mr-10"
+        >
+            <span>Products</span>
+        </a>
+        <a 
+            routerLink="/about"
+            routerLinkActive="text-yellow-500"
+        >
+            <span>About</span>
+        </a>
     </span>
 </nav>

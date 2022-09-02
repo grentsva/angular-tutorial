@@ -13,7 +13,8 @@ import { FocusDirective } from './directives/focus.directive'
 import { ProductPageComponent } from './pages/product-page/product-page.component'
 import { AboutPageComponent } from './pages/about-page/about-page.component'
 import { NavigationComponent } from './components/navigation/navigation.component'
-import { PreloaderComponent } from './components/common/preloader/preloader.component'
+import { PreloaderComponent } from './components/common/preloader/preloader.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PreloaderComponent } from './components/common/preloader/preloader.comp
     ProductPageComponent,
     AboutPageComponent,
     NavigationComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
