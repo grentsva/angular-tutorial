@@ -1,4 +1,4 @@
-<form class="flex flex-col items-center" [formGroup]="form" (ngSubmit)="submit()">
+<form class="flex flex-col" [formGroup]="form" (ngSubmit)="submit()">
     <input  
         type="text" 
         class="border w-full py-2 px-4 mb-2" 
@@ -7,8 +7,9 @@
         appFocus
     >
 
-    <p *ngIf="title.errors?.minlength && title.touched"
-    class="text-red-600 font-medium mb-2 self-start"
+    <p 
+        *ngIf="title.errors?.minlength && title.touched"
+        class="text-red-600 font-medium mb-2 self-start"
     >
         Please fill title field width min length. Now {{title.value.length}}
     </p>    
@@ -20,17 +21,24 @@
         formControlName="description"
     >
 
-    <input  
-        type="number"
-        min="0"
-        class="border w-full py-2 px-4 mb-2" 
-        formControlName="price"
-    >
-    
-    <button 
-        type="submit" 
-        class="py-2 px-4 bg-green-600 rounded text-white"
-    >
-        <span>&#10010;</span>
-    </button>
+    <div class="flex mb-2">
+        <p class="py-2 px-4">Price: </p>
+        <input  
+            type="number"
+            min="0"
+            class="border w-full py-2 px-4" 
+            formControlName="price"
+        >
+    </div>
+
+    <div class="flex justify-center">
+        <button
+            [disabled]="title.value.length <= 2" 
+            type="submit" 
+            class="py-2 px-4 bg-green-600 rounded text-white"
+        >
+            <span>&#10010;</span>
+        </button>
+    </div>
+
 </form>

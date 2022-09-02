@@ -1,5 +1,7 @@
 <div class="py-4 px-6 border relative">
-    <img [src]="product.image" [alt]="product.title" class="w-1/3 mb-2">
+    <div class="flex justify-center mb-2">
+        <img [src]="product.image" [alt]="product.title" class="w-1/3">
+    </div>
     <h2 class="mb-2 text-md text-yellow-500">{{product.title}}</h2>
     <p>Price: <span class="font-bold">{{product.price | currency}}</span></p>
 
