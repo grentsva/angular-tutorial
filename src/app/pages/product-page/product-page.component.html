@@ -1,12 +1,12 @@
-<div>
+<app-preloader *ngIf="isLoading"></app-preloader>
+
+<div *ngIf="!isLoading">
     <input 
         type="text"
         class="mb-2 border py-2 px-4 w-full"
         placeholder="Filter products..."
         [(ngModel)]="term"
     >
-
-    <app-preloader *ngIf="isLoading"></app-preloader>
 
     <div *ngIf="productsService.products">
         <app-product 
